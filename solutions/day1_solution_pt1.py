@@ -34,7 +34,7 @@ for instruction in instructions:
         position = position + 100
         neue_position = neue_position + 100
 
-    Wenn neue Position rechts außerhalb der range
+    # Wenn neue Position rechts außerhalb der range
     if neue_position >= len(dial):
         # Füge hinten 100 Elemente hinzu
         dial.extend([i % 100 for i in range(100)])
