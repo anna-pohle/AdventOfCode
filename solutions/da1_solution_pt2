@@ -15,7 +15,11 @@ for instruction in instructions:
     direction = instruction[0]  # 'L' oder 'R'
     distance = int(instruction[1:])  # Die Zahl nach dem Buchstaben
     
-    # Reduziere Distanz
+    # Zähle Nullen während der Bewegung
+    unterwegs_nullen = distance // 100  # Anzahl kompletter 100er-Runden
+    counter += unterwegs_nullen
+    
+    # Reduziere Distanz für die Position
     distance = distance % 100
     
     # Berechne neue Position
@@ -25,16 +29,13 @@ for instruction in instructions:
         neue_position = position + distance
     
     # Erweitere dial-Liste nur wenn out of range
-
-    # Wenn neue Position links außerhalb der range 
     if neue_position < 0:
         # Füge vorne 100 Elemente hinzu
         neue_elemente = [i % 100 for i in range(100)]
         dial = neue_elemente + dial
         position = position + 100
         neue_position = neue_position + 100
-
-    Wenn neue Position rechts außerhalb der range
+    
     if neue_position >= len(dial):
         # Füge hinten 100 Elemente hinzu
         dial.extend([i % 100 for i in range(100)])
@@ -42,7 +43,7 @@ for instruction in instructions:
     # Bewege Position
     position = neue_position
     
-    # Prüfe ob auf 0
+    # Prüfe ob auf 0 gelandet
     if dial[position] == 0:
         counter += 1
 
