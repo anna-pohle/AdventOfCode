@@ -24,20 +24,27 @@ for instruction in instructions:
     else:  # direction == 'R'
         neue_position = position + distance
     
-    # Erweitere nur wenn out of range
-    # TODO: Wenn neue_position < 0:
-    #       - Füge vorne 100 Elemente hinzu
-    #       - Passe position und neue_position an (+100)
-    
-    # TODO: Wenn neue_position >= len(dial):
-    #       - Füge hinten 100 Elemente hinzu
+    # Erweitere dial-Liste nur wenn out of range
+
+    # Wenn neue Position links außerhalb der range 
+    if neue_position < 0:
+        # Füge vorne 100 Elemente hinzu
+        neue_elemente = [i % 100 for i in range(100)]
+        dial = neue_elemente + dial
+        position = position + 100
+        neue_position = neue_position + 100
+
+    Wenn neue Position rechts außerhalb der range
+    if neue_position >= len(dial):
+        # Füge hinten 100 Elemente hinzu
+        dial.extend([i % 100 for i in range(100)])
     
     # Bewege Position
     position = neue_position
     
     # Prüfe ob auf 0
-    # TODO: Wenn dial[position] == 0:
-    #       - counter erhöhen
+    if dial[position] == 0:
+        counter += 1
 
 # Ergebnis ausgeben
 print(f"Das Passwort ist: {counter}")
