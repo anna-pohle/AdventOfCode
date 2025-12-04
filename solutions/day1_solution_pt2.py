@@ -1,5 +1,5 @@
 # Input einlesen als Liste von Instructions
-with open('input.txt', 'r') as f:
+with open('day1_data.txt', 'r') as f:
     instructions = [line.strip() for line in f]
 
 # Initiale Liste erstellen (300 Elemente, 0-99 wiederholt)
