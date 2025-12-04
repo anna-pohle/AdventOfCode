@@ -26,18 +26,21 @@ for range_str in ranges:
         
         # Teste alle möglichen Pattern-Längen (Teiler von id_len)
         for pattern_len in range(1, id_len):
-            # TODO: Prüfe ob pattern_len ein Teiler von id_len ist
-            
-            # TODO: Wenn ja, nimm die ersten pattern_len Zeichen als Pattern
-            
-            # TODO: Berechne wie oft das Pattern wiederholt werden muss
-            
-            # TODO: Wiederhole das Pattern entsprechend oft
-            
-            # TODO: Prüfe ob das wiederholte Pattern gleich id_str ist
-            
-            # TODO: Wenn ja, setze ist_ungueltig = True und breche ab
-        
+            # Prüfe ob pattern_len ein Teiler von id_len ist
+            if id_len % pattern_len == 0:
+                
+                # Wenn ja, nimm die ersten pattern_len Zeichen als Pattern
+                pattern = id_str[:pattern_len]
+                # Berechne wie oft das Pattern wiederholt werden muss
+                wiederholungen = id_len // pattern_len
+                # Wiederhole das Pattern entsprechend oft
+                wiederholtes_pattern = pattern * wiederholungen
+                # Prüfe ob das wiederholte Pattern gleich id_str ist
+                if wiederholtes_pattern == id_str:
+                    # Wenn ja, setze ist_ungueltig = True und brich ab
+                    ist_ungueltig = True
+                    break 
+                
         # Wenn ungültig, addiere zum Counter
         if ist_ungueltig:
             counter += i
