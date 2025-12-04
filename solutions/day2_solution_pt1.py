@@ -17,15 +17,21 @@ for range_str in ranges:
     
     # Für jede Zahl im Range
     for i in range(start, end + 1):
-        # TODO: Konvertiere zu String
+        # Konvertiere zu String
+        id = str(i)
         
-        # TODO: Prüfe ob gerade Länge
+        # Prüfe ob gerade Länge
+        if len(id) % 2 == 0:
         
-        # TODO: Teile in Hälften
-        
-        # TODO: Prüfe ob beide Hälften gleich sind
-        
-        # TODO: Wenn ja, addiere i zum counter
-
+            # Teile in Hälften
+            id_a = id[0 : (len(id) // 2)]
+            id_b = id[(len(id) // 2):]
+            
+            #  Prüfe ob beide Hälften gleich sind
+            if id_a == id_b:
+            # Wenn ja, addiere i zum counter
+                counter += i
+        else:
+            continue
 # Ergebnis ausgeben
 print(f"Total sum of invalid IDs: {counter}")
