@@ -1,5 +1,5 @@
 # Input einlesen
-with open('day2_input.txt', 'r') as f:
+with open('day2_data.txt', 'r') as f:
     line = f.read().strip()
 
 # Counter initialisieren
