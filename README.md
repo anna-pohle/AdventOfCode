@@ -2,5 +2,5 @@
 
 current progress:
 
-<img width="680" height="177" alt="image" src="https://github.com/user-attachments/assets/2e596c94-5834-4836-8302-a9250bbdf882" />
+<img width="690" height="217" alt="image" src="https://github.com/user-attachments/assets/9426b82b-8fe7-4de7-8409-109b8d538d38" />
 
